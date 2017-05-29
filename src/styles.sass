@@ -1,1 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
+#Loader
+    height: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+
+#Spinner
+    position: absolute
+    border: 2px solid white
+    height: 200px
+    width: 200px
+    border-radius: 50%
+    border-left-color: #000
+    animation: spinner 1s linear infinite
+    &:before
+        content: ""
+        position: absolute
+        border: 2px solid white
+        height: 180px
+        width: 180px
+        margin: 8px 0px 0px 8px
+        border-radius: 50%
+        border-right-color: #000
+        animation: spinner 2s linear infinite
+    &:after
+        content: ""
+        position: absolute
+        border: 2px solid white
+        height: 220px
+        width: 220px
+        margin: -12px 0px 0px -12px
+        border-radius: 50%
+        border-right-color: #000
+        animation: spinner 4s linear infinite
+
+=keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
+
++keyframes(spinner)
+  100%
+    transform: rotate(360deg)
