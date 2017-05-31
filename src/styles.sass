@@ -1,49 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
+$color: #2980b9
+$color-b: #c0392b
+$color-a: #27ae60
+$spin-time: 1.5s
+
+body
+	background: #f2f2f2 !important
+
+
 #Loader
-    height: 100%
-    display: flex
-    justify-content: center
-    align-items: center
+	height: 100%
+	display: flex
+	justify-content: center
+	align-items: center
 
 #Spinner
-    position: absolute
-    border: 2px solid white
-    height: 200px
-    width: 200px
-    border-radius: 50%
-    border-left-color: #000
-    animation: spinner 1s linear infinite
-    &:before
-        content: ""
-        position: absolute
-        border: 2px solid white
-        height: 180px
-        width: 180px
-        margin: 8px 0px 0px 8px
-        border-radius: 50%
-        border-right-color: #000
-        animation: spinner 2s linear infinite
-    &:after
-        content: ""
-        position: absolute
-        border: 2px solid white
-        height: 220px
-        width: 220px
-        margin: -12px 0px 0px -12px
-        border-radius: 50%
-        border-right-color: #000
-        animation: spinner 4s linear infinite
+	position: absolute
+	border: 2px solid transparent
+	height: 200px
+	width: 200px
+	border-radius: 50%
+	border-left-color: $color
+	animation: spinner $spin-time linear infinite
+	&:before
+		content: ""
+		position: absolute
+		border: 2px solid transparent
+		height: 180px
+		width: 180px
+		margin: 8px 0px 0px 8px
+		border-radius: 50%
+		border-right-color: $color-b
+		animation: spinner $spin-time * 2 linear infinite
+	&:after
+		content: ""
+		position: absolute
+		border: 2px solid transparent
+		height: 220px
+		width: 220px
+		margin: -12px 0px 0px -12px
+		border-radius: 50%
+		border-right-color: $color-a
+		animation: spinner $spin-time * 4 linear infinite
 
 =keyframes($name)
-  @-webkit-keyframes #{$name}
-    @content
-  @-moz-keyframes #{$name}
-    @content
-  @-ms-keyframes #{$name}
-    @content
-  @keyframes #{$name}
-    @content
+	@-webkit-keyframes #{$name}
+		@content
+	@-moz-keyframes #{$name}
+		@content
+	@-ms-keyframes #{$name}
+		@content
+	@keyframes #{$name}
+		@content
 
 +keyframes(spinner)
-  100%
-    transform: rotate(360deg)
+	100%
+		transform: rotate(360deg)
